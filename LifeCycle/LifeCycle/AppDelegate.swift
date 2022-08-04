@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  AssertYourself
+//  LifeCycle
 //
-//  Created by master on 8/3/22.
+//  Created by master on 8/4/22.
 //
 
 import UIKit
