@@ -27,6 +27,7 @@
 		AFEE926B289ED2CC00C7FF91 /* MySingletonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE9269289ED2CC00C7FF91 /* MySingletonViewController.swift */; };
 		AFEE926C289ED2CC00C7FF91 /* MySingletonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFEE926A289ED2CC00C7FF91 /* MySingletonViewController.xib */; };
 		AFEE926E289F17B600C7FF91 /* MySingletonViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE926D289F17B600C7FF91 /* MySingletonViewControllerTests.swift */; };
+		AFEE9270289F1DC300C7FF91 /* OverrideViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEE926F289F1DC300C7FF91 /* OverrideViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		AFEE9269289ED2CC00C7FF91 /* MySingletonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySingletonViewController.swift; sourceTree = "<group>"; };
 		AFEE926A289ED2CC00C7FF91 /* MySingletonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySingletonViewController.xib; sourceTree = "<group>"; };
 		AFEE926D289F17B600C7FF91 /* MySingletonViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySingletonViewControllerTests.swift; sourceTree = "<group>"; };
+		AFEE926F289F1DC300C7FF91 /* OverrideViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverrideViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				AFEE9234289EC9CB00C7FF91 /* HardDependenciesTests.swift */,
 				AFEE926D289F17B600C7FF91 /* MySingletonViewControllerTests.swift */,
+				AFEE926F289F1DC300C7FF91 /* OverrideViewControllerTests.swift */,
 			);
 			path = HardDependenciesTests;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				AFEE926E289F17B600C7FF91 /* MySingletonViewControllerTests.swift in Sources */,
 				AFEE9235289EC9CB00C7FF91 /* HardDependenciesTests.swift in Sources */,
+				AFEE9270289F1DC300C7FF91 /* OverrideViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
