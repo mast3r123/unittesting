@@ -9,6 +9,8 @@ import UIKit
 
 class InstancePropertyViewController: UIViewController {
     
+    lazy var analytics = Analytics.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,7 +19,7 @@ class InstancePropertyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        Analytics.shared.track(event: "viewDidAppear - \(type(of: self))")
+        analytics.track(event: "viewDidAppear - \(type(of: self))")
     }
     
 }
