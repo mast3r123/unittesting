@@ -6,19 +6,24 @@
 //
 
 import XCTest
+import ViewControllerPresentationSpy
 
 @testable import Navigation
 
 class ViewControllerTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var presentationVerifier: PresentationVerifier!
+    
+    override func setUp() {
+        super.setUp()
+        presentationVerifier = PresentationVerifier()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        presentationVerifier = nil
+        super.tearDown()
     }
-
+    
     func test_tappingCodePushButton_shouldPushCodeNextViewController() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let sut: ViewController = storyBoard.instantiateViewController(identifier: String(describing: ViewController.self))
@@ -38,5 +43,15 @@ class ViewControllerTests: XCTestCase {
         
         XCTAssertEqual(codeNextVC.label.text, "Pushed from code")
     }
-
+    
+    func test_tappingCodeModalButton_shouldPresentCodeNextViewController() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let sut: ViewController = storyBoard.instantiateViewController(identifier: String(describing: ViewController.self))
+        sut.loadViewIfNeeded()
+        tap(sut.codeModalButton)
+        
+        let codeNextVC: CodeNextViewController? = presentationVerifier.verify(animated: true, presentingViewController: sut)
+        XCTAssertEqual(codeNextVC?.label.text, "Modal from code")
+    }
+    
 }
