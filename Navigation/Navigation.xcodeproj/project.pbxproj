@@ -15,6 +15,8 @@
 		AFED551628A46AC4002A9402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFED551428A46AC4002A9402 /* LaunchScreen.storyboard */; };
 		AFED553A28A570EA002A9402 /* CodeNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED553928A570EA002A9402 /* CodeNextViewController.swift */; };
 		AFED553C28A5AD3B002A9402 /* SegueNextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED553B28A5AD3B002A9402 /* SegueNextViewController.swift */; };
+		AFED553E28A5B391002A9402 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED553D28A5B391002A9402 /* ViewControllerTests.swift */; };
+		AFED554028A5B3F4002A9402 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED553F28A5B3F4002A9402 /* TestHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		AFED551C28A46AC4002A9402 /* NavigationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFED553928A570EA002A9402 /* CodeNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeNextViewController.swift; sourceTree = "<group>"; };
 		AFED553B28A5AD3B002A9402 /* SegueNextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueNextViewController.swift; sourceTree = "<group>"; };
+		AFED553D28A5B391002A9402 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		AFED553F28A5B3F4002A9402 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		AFED551F28A46AC4002A9402 /* NavigationTests */ = {
 			isa = PBXGroup;
 			children = (
+				AFED553D28A5B391002A9402 /* ViewControllerTests.swift */,
+				AFED553F28A5B3F4002A9402 /* TestHelper.swift */,
 			);
 			path = NavigationTests;
 			sourceTree = "<group>";
@@ -153,6 +159,7 @@
 					};
 					AFED551B28A46AC4002A9402 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 						TestTargetID = AFED550528A46AC2002A9402;
 					};
 				};
@@ -213,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFED553E28A5B391002A9402 /* ViewControllerTests.swift in Sources */,
+				AFED554028A5B3F4002A9402 /* TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,14 +428,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = master.NavigationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navigation.app/Navigation";
@@ -438,10 +454,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = master.NavigationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
