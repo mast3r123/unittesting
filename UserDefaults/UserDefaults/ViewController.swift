@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol UserDefaultsProtocol {
+    func set(_ value: Int, forKey defaultName: String)
+    func integer(forKey defaultName: String) -> Int
+}
+
+extension UserDefaults: UserDefaultsProtocol { }
+
 class ViewController: UIViewController {
 
     @IBOutlet private(set) var counterLabel: UILabel!
@@ -14,16 +21,18 @@ class ViewController: UIViewController {
     
     let key = "count"
     
+    var userDefaults: UserDefaultsProtocol = UserDefaults.standard
+    
     private var count = 0 {
         didSet {
             counterLabel.text = "\(count)"
-            UserDefaults.standard.set(count, forKey: key)
+            userDefaults.set(count, forKey: key)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        count = UserDefaults.standard.integer(forKey: key)
+        count = userDefaults.integer(forKey: key)
     }
 
     @IBAction private func incrementButtonTapped() {

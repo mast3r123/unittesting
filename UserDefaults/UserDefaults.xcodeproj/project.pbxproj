@@ -13,6 +13,9 @@
 		AFED555928A67B1D002A9402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFED555728A67B1D002A9402 /* Main.storyboard */; };
 		AFED555B28A67B1F002A9402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFED555A28A67B1F002A9402 /* Assets.xcassets */; };
 		AFED555E28A67B1F002A9402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFED555C28A67B1F002A9402 /* LaunchScreen.storyboard */; };
+		AFED558228A7FFA2002A9402 /* FakeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED558128A7FFA2002A9402 /* FakeUserDefaults.swift */; };
+		AFED558428A80051002A9402 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED558328A80051002A9402 /* ViewControllerTests.swift */; };
+		AFED558628A80341002A9402 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED558528A80341002A9402 /* TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 		AFED555D28A67B1F002A9402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFED555F28A67B1F002A9402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFED556428A67B20002A9402 /* UserDefaultsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserDefaultsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFED558128A7FFA2002A9402 /* FakeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
+		AFED558328A80051002A9402 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		AFED558528A80341002A9402 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 		AFED556728A67B20002A9402 /* UserDefaultsTests */ = {
 			isa = PBXGroup;
 			children = (
+				AFED558128A7FFA2002A9402 /* FakeUserDefaults.swift */,
+				AFED558328A80051002A9402 /* ViewControllerTests.swift */,
+				AFED558528A80341002A9402 /* TestHelpers.swift */,
 			);
 			path = UserDefaultsTests;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 					};
 					AFED556328A67B20002A9402 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 						TestTargetID = AFED554D28A67B1D002A9402;
 					};
 				};
@@ -205,6 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFED558428A80051002A9402 /* ViewControllerTests.swift in Sources */,
+				AFED558228A7FFA2002A9402 /* FakeUserDefaults.swift in Sources */,
+				AFED558628A80341002A9402 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,14 +424,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = master.UserDefaultsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UserDefaults.app/UserDefaults";
@@ -430,10 +450,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = master.UserDefaultsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
