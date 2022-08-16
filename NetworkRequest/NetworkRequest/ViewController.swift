@@ -7,10 +7,18 @@
 
 import UIKit
 
+protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol { }
+
 class ViewController: UIViewController {
     
     @IBOutlet private(set) var button: UIButton!
     private var dataTask: URLSessionDataTask?
+    
+    var session: URLSessionProtocol = URLSession.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +27,18 @@ class ViewController: UIViewController {
     
     @IBAction private func buttonTapped() {
         searchForBook(terms: "out from boneville")
+//        searchForBook(terms: "the great cow race")
     }
     
     private func searchForBook(terms: String) {
         guard let encodedTerms = terms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-              let url = URL(string: "https://itunes.apple.com/search?" + "media=ebook&term\(encodedTerms)") else {
+              let url = URL(string: "https://itunes.apple.com/search?" +
+                            "media=ebook&term=\(encodedTerms)") else {
             return
         }
         
         let request = URLRequest(url: url)
-        dataTask = URLSession.shared.dataTask(with: request) { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
+        dataTask = session.dataTask(with: request) { [weak self] (data: Data?, response: URLResponse?, error: Error?) -> Void in
             guard let self = self else { return }
             
             let decoded = String(data: data ?? Data() , encoding: .utf8)
